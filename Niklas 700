@@ -1,0 +1,63 @@
+"700": {
+      "aboutEntity": "?work",
+      "include": "attribution",
+      "resourceType": "marc:AddedEntry",
+      "TODO:if-resourceType-ignoreOnRevertInFavourOf": "100",
+      "match-code": {
+        "t": {
+          "pendingResources": {
+            "_:work": {"link": "agent", "resourceType": "UniformWork", "embedded": false},
+            "_:agent": {"about": "_:work", "link": "attributedTo", "resourceType": "Person", "embedded": false}
+          },
+          "$t": {"about": "_:work", "property": "title"},
+          "$l": {"about": "_:work", "link": "language", "resourceType": "Language", "property": "label"}
+        }
+      },
+      "TOOO:i2": {},
+      "_spec": [
+        {
+          "source": {"700":
+            {"ind1": "1", "ind2": " ", "subfields": [
+              {"a": "Pietilä, Tuulikki"}, {"d": "1917-"}
+            ]}
+          },
+          "result": {"mainEntity": {
+            "instanceOf": {
+              "@type": "Text",
+              "qualifiedAttribution": [
+                {
+                  "@type": "marc:AddedEntry",
+                  "agent": {"@type": "Person",
+                    "familyName":  "Pietilä",
+                    "givenName":  "Tuulikki",
+                    "birthYear":  "1917"}
+                }
+              ]
+            }
+          }}
+        },
+        {
+          "source": {
+            "700": {"ind1": "1", "ind2": " ", "subfields": [
+              {"a": "Jansson, Tove"},
+              {"t": "Anteckningar från en ö"}
+          ]}},
+          "result": {"mainEntity": {
+            "instanceOf": {
+              "@type": "Text",
+              "qualifiedAttribution": [
+                {
+                  "@type": "marc:AddedEntry",
+                  "agent": {
+                    "@type": "UniformWork",
+                    "title": "Anteckningar från en ö",
+                    "attributedTo": {"@type": "Person",
+                      "familyName":  "Jansson", "givenName":  "Tove"}
+                  }
+                }
+              ]
+            }
+          }}
+        }
+      ]
+    },

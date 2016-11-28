@@ -1,3 +1,17 @@
+  "attribution": {
+      "include": "agentdata",
+      "addLink": "qualifiedAttribution",
+      "embedded": true,
+      "pendingResources": {
+        "_:agent": {"link": "agent", "resourceType": "Person"}
+      },
+      "$4": {"link": "role", "property": "notation", "uriTemplate": "{notation}", "TODO:mapping": "relatorCode"},
+      "$e": {"addProperty": "roleNote"}
+    },
+
+
+
+
 "700": {
       "aboutEntity": "?work",
       "include": "attribution",
@@ -24,6 +38,11 @@
           "result": {"mainEntity": {
             "instanceOf": {
               "@type": "Text",
+              #prov:qualifiedAttribution  är bättre än prov:qualifiedInfluence. bf2:contribution
+              
+              
+              
+              
               "qualifiedAttribution": [
                 {
                   "@type": "marc:AddedEntry",
@@ -37,6 +56,40 @@
           }}
         },
         {
+ "100": {
+      "aboutEntity": "?work",
+      "include": "attribution",
+      "resourceType": "marc:MainEntry",
+      "_spec": [
+        {
+          "source": {
+            "100": {"ind1": "1", "ind2": " ", "subfields": [
+              {"a": "Jansson, Tove,"},
+              {"d": "1914-2001"}
+          ]}},
+          "normalized": {
+            "100": {"ind1": "1", "ind2": " ", "subfields": [
+              {"a": "Jansson, Tove"},
+              {"d": "1914-2001"}
+          ]}},
+          "result": {"mainEntity": {
+            "instanceOf": {
+              "@type": "Text",
+              "qualifiedAttribution": [
+                {
+                  "@type": "marc:MainEntry",
+                  "agent": {"@type": "Person",
+                    "familyName":  "Jansson",
+                    "givenName":  "Tove",
+                    "birthYear":  "1914",
+                    "deathYear":  "2001"}
+                }
+              ]
+            }
+          }}
+        }
+      ]
+    },
           "source": {
             "700": {"ind1": "1", "ind2": " ", "subfields": [
               {"a": "Jansson, Tove"},
